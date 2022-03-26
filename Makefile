@@ -1,6 +1,10 @@
-CFLAGS=-std=c11 -g -static
+CFLAGS = -std=c11 -g -static
 
-9cc: 9cc.c
+NAME = 9cc
+
+all : $(NAME)
+
+$(NAME) : 9cc.c
 
 test: 9cc
 	./test.sh
