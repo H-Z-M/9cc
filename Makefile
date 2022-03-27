@@ -1,15 +1,12 @@
-CFLAGS = -std=c11 -g -static
+CFLAGS=-std=c11 -g -static
 
-NAME = 9cc
+chibicc: main.o
+	$(CC) -o $@ $? $(LDFLAGS)
 
-all : $(NAME)
-
-$(NAME) : 9cc.c
-
-test: 9cc
+test: chibicc
 	./test.sh
 
 clean:
-	rm -f 9cc *.o *~ tmp*
+	rm -f chibicc *.o *~ tmp*
 
 .PHONY: test clean
